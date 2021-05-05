@@ -4,7 +4,7 @@ import BlogContext from '../context/BlogContext';
 
 const HomeScreen = () => {
     const value = useContext(BlogContext);
-    
+
     return ( 
         <View>
             <Text>Home screen</Text>
