@@ -15,11 +15,11 @@ export const BlogProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, []);
 
     const addBlog = () => {
-        dispatch({ type: 'add_blog' })
+        dispatch({ type: 'add_blog' });
     }
 
     return (
-        <BlogContext.Provider value={{ data: state, addBlog }}>
+        <BlogContext.Provider value={{ state, addBlog }}>
             { children }
         </BlogContext.Provider>
     )

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native
 import BlogContext from '../context/BlogContext';
 
 const HomeScreen = () => {
-    const { data, addBlog } = useContext(BlogContext);
+    const { state, addBlog } = useContext(BlogContext);
 
     return ( 
         <View>
@@ -12,7 +12,7 @@ const HomeScreen = () => {
                 <Text>Click me</Text>
             </TouchableOpacity>
             <FlatList
-                data={ data }
+                data={ state }
                 keyExtractor={ blog => blog.title }
                 renderItem={ ({ item }) => (
                     <Text>{ item.title }</Text>
