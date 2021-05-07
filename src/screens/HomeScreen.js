@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import BlogContext from '../context/BlogContext';
+import { Context } from '../context/BlogContext';
 
 const HomeScreen = () => {
-    const { state, addBlog } = useContext(BlogContext);
+    const { state, addBlog } = useContext(Context);
 
     return ( 
         <View>
