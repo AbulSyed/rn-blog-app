@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
 import { Context } from '../context/BlogContext';
 
 const HomeScreen = () => {
@@ -8,9 +8,10 @@ const HomeScreen = () => {
     return ( 
         <View>
             <Text>Home screen</Text>
-            <TouchableOpacity onPress={ () => addBlog() }>
-                <Text>Click me</Text>
-            </TouchableOpacity>
+            <Button
+                title="add blog"
+                onPress={ () => addBlog() }
+            />
             <FlatList
                 data={ state }
                 keyExtractor={ blog => blog.title }
