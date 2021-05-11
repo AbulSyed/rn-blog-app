@@ -4,10 +4,12 @@ import { createAppContainer } from 'react-navigation';
 import HomeScreen from './src/screens/HomeScreen';
 import { Provider } from './src/context/BlogContext';
 import DetailsScreen from './src/screens/DetailsScreen';
+import CreateScreen from './src/screens/CreateScreen';
 
 const navigator = createStackNavigator({
   Home: HomeScreen,
-  Details: DetailsScreen
+  Details: DetailsScreen,
+  Create: CreateScreen
 }, {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
