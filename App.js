@@ -3,9 +3,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import HomeScreen from './src/screens/HomeScreen';
 import { Provider } from './src/context/BlogContext';
+import DetailsScreen from './src/screens/DetailsScreen';
 
 const navigator = createStackNavigator({
-  Home: HomeScreen
+  Home: HomeScreen,
+  Details: DetailsScreen
 }, {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
