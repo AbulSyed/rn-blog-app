@@ -6,11 +6,11 @@ const DetailsScreen = ({ navigation }) => {
     const { state } = useContext(Context);
     const id = navigation.getParam('id');
 
-    const blogs = state.find(blog => blog.id === id);
+    const blog = state.find(blog => blog.id === id);
 
     return ( 
         <View>
-            <Text>{ blogs.title }</Text>
+            <Text>{ blog.title }</Text>
         </View>
      );
 }
