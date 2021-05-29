@@ -33,9 +33,9 @@ const HomeScreen = ({ navigation }) => {
 HomeScreen.navigationOptions = ({ navigation }) => {
     return {
         headerRight: () => (
-          <TouchableOpacity onPress={() => navigation.navigate('Create')}>
-            <Feather name="plus" size={30} />
-          </TouchableOpacity>
+            <TouchableOpacity onPress={ () => navigation.navigate('Create') }>
+                <Feather name="plus" size={ 30 } />
+            </TouchableOpacity>
         )
     }
 }
