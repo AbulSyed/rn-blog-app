@@ -3,7 +3,7 @@ import createDataContext from './createDataContext';
 const reducer = (state, action) => {
     switch(action.type){
         case 'add_blog':
-            return [...state, { id: Math.floor(Math.random() * 999), title: `blog #${state.length + 1}` }];
+            return [...state, { id: Math.floor(Math.random() * 999), title: action.payload.title, content: action.payload.content }];
         case 'delete_blog':
             return state.filter(blog => blog.id !== action.payload);
         default:
@@ -12,8 +12,9 @@ const reducer = (state, action) => {
 }
 
 const addBlog = dispatch => {
-    return () => {
-        dispatch({ type: 'add_blog' });
+    return (title, content, callback) => {
+        dispatch({ type: 'add_blog', payload: { title, content } });
+        callback();
     }
 }
 

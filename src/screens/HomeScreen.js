@@ -1,17 +1,13 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet, FlatList, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { Context } from '../context/BlogContext';
 import { Feather } from '@expo/vector-icons';
 
 const HomeScreen = ({ navigation }) => {
-    const { state, addBlog, deleteBlog } = useContext(Context);
+    const { state, deleteBlog } = useContext(Context);
 
     return ( 
         <View>
-            <Button
-                title="add blog"
-                onPress={ () => addBlog() }
-            />
             <FlatList
                 data={ state }
                 keyExtractor={ blog => blog.title }
