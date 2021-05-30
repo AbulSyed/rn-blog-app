@@ -6,6 +6,14 @@ const reducer = (state, action) => {
             return [...state, { id: Math.floor(Math.random() * 999), title: action.payload.title, content: action.payload.content }];
         case 'delete_blog':
             return state.filter(blog => blog.id !== action.payload);
+        case 'edit_blog':
+            return state.map(blog => {
+                if(blog.id === action.payload.id){
+                    return action.payload;
+                }else{
+                    return blog;
+                }
+            })
         default:
             return state;
     }
@@ -24,4 +32,10 @@ const deleteBlog = dispatch => {
     }
 }
 
-export const { Context, Provider } = createDataContext(reducer, { addBlog, deleteBlog }, []);
+const editBlog = dispatch => {
+    return (id, title, content) => {
+        dispatch({ type: 'edit_blog', payload: { id, title, content } })
+    }
+}
+
+export const { Context, Provider } = createDataContext(reducer, { addBlog, deleteBlog, editBlog }, []);

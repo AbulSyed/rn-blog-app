@@ -5,11 +5,13 @@ import HomeScreen from './src/screens/HomeScreen';
 import { Provider } from './src/context/BlogContext';
 import DetailsScreen from './src/screens/DetailsScreen';
 import CreateScreen from './src/screens/CreateScreen';
+import EditScreen from './src/screens/EditScreen';
 
 const navigator = createStackNavigator({
   Home: HomeScreen,
   Details: DetailsScreen,
-  Create: CreateScreen
+  Create: CreateScreen,
+  Edit: EditScreen
 }, {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
