@@ -15,7 +15,9 @@ const EditScreen = ({ navigation }) => {
             <TextInput style={ styles.textInput } placeholder="content" value={ content } onChangeText={ value => setContent(value) } />
             <Button
                 title="update blog"
-                onPress={ () => editBlog(id, title, content) }
+                onPress={ () => editBlog(id, title, content, () => {
+                    navigation.pop();
+                }) }
             />
         </View>
      );
