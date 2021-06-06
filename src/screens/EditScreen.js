@@ -5,7 +5,7 @@ import { Context } from '../context/BlogContext';
 const EditScreen = ({ navigation }) => {
     const { state, editBlog } = useContext(Context);
     const id = navigation.getParam('id');
-    const blog = state.find(blog => blog.id === id);
+    const blog = state.find(blog => blog._id === id);
     const [title, setTitle] = useState(blog.title);
     const [content, setContent] = useState(blog.content);
 
