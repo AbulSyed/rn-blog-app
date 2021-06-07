@@ -6,7 +6,7 @@ const reducer = (state, action) => {
         case 'get_blogs':
             return action.payload;
         case 'add_blog':
-            return [...state, { _id: Math.floor(Math.random() * 999), title: action.payload.title, content: action.payload.content }];
+            return [...state, action.payload];
         case 'delete_blog':
             return state.filter(blog => blog._id !== action.payload);
         case 'edit_blog':
@@ -30,8 +30,9 @@ const getBlogs = dispatch => {
 }
 
 const addBlog = dispatch => {
-    return (title, content, callback) => {
-        dispatch({ type: 'add_blog', payload: { title, content } });
+    return async (title, content, callback) => {
+        const res = await api.post('/blogs', { title, content });
+        dispatch({ type: 'add_blog', payload: res.data });
         callback();
     }
 }
