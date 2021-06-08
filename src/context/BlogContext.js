@@ -45,7 +45,8 @@ const deleteBlog = dispatch => {
 }
 
 const editBlog = dispatch => {
-    return (id, title, content, callback) => {
+    return async (id, title, content, callback) => {
+        await api.patch(`/blogs/${id}`, { title, content });
         dispatch({ type: 'edit_blog', payload: { _id: id, title, content } });
         callback();
     }
